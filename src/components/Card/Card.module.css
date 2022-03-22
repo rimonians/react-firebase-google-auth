@@ -1,0 +1,39 @@
+.card {
+  width: 350px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.name {
+  color: dodgerblue;
+}
+.email {
+  color: #666;
+}
+.signOutBtn {
+  padding: 0.2rem 1rem;
+  background: crimson;
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 425px) {
+  .card {
+    width: 90%;
+  }
+}

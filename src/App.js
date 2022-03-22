@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import classes from "./App.module.css";
+import useAuth from "./hooks/useAuth";
+import SignInButton from "./components/SignInButton/SignInButton";
+import Card from "./components/Card/Card";
 
-function App() {
+const App = () => {
+  const { authState, handleSignIn } = useAuth();
+  const { loading, isLoggedIn } = authState;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.container}>
+      {!isLoggedIn && !loading && (
+        <SignInButton onClick={handleSignIn}>Sign in with Google</SignInButton>
+      )}
+
+      {isLoggedIn && <Card />}
     </div>
   );
-}
+};
 
 export default App;
